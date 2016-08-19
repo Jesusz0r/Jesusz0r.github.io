@@ -1,0 +1,82 @@
+.flexbox {
+    @include display-flex;
+    @include flex-flow(column);
+
+
+
+
+    #menu {
+        nav {
+            @include display-flex;
+            @include flex-flow(row);
+            @include justify-content(flex-end);
+
+            ul {
+                @include display-flex;
+                @include flex-direction(column);
+
+                @media screen and (min-width: 768px) {
+                    @include flex-direction(row);
+                }
+            }
+        }
+
+         @media screen and (min-width:768px) {
+            &.fixed-menu nav {
+                @include justify-content(space-between);
+                @include align-items(center);
+
+                h1 {
+                    @include display-flex(inline-flex);
+                }
+            }
+        }
+    }
+
+
+
+
+    #home {
+        @include display-flex;
+        @include flex-flow(column);
+        @include justify-content(space-between);
+        padding-top: 10%;
+
+        .contenido {
+            @include align-self(center);
+    				padding-top: 50px;
+    				margin-bottom: 50px;
+
+            @media screen and (min-width: 768px) {
+                margin-top: auto;
+            }
+        }
+
+        .homeimage {
+            margin-top: auto;
+        }
+
+        @media screen and (min-width:768px) {
+            padding-top: 5%;
+        }
+    }
+
+
+
+
+    #sobremi {
+        .sobremi_container {
+            @include display-flex;
+            @include flex-flow(column);
+
+            .skills {
+
+                .skills-list {
+                    @include display-flex;
+                    @include flex-flow(row wrap);
+                }
+            }
+        }
+    }
+
+}

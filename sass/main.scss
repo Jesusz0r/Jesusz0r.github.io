@@ -1,0 +1,531 @@
+@import 'compass', 'flexbox', 'noflexbox';
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,700);
+
+* {
+	margin: 0;
+	padding: 0;
+	@include box-sizing(border-box);
+}
+
+html, body {
+	font-size: 16px;
+	font-family: 'Raleway', sans-serif;
+	background: rgb(250,250,250);
+	height: 100%;
+	min-height: 100%;
+	color: rgb(35,35,35);
+	position: relative;
+}
+
+///////////////////////////////
+///////ESTILOS GENERALES///////
+///////////////////////////////
+
+#sobremi, #promo, #portafolio, #contacto {
+	padding: 75px 25px;
+
+    h1 {
+		font-size: 1.5em;
+        color: #222;
+        text-align: center;
+		margin-bottom: 25px;
+
+        @media screen and (min-width: 520px) {
+            font-size: 2em;
+        }
+	}
+
+	h2 {
+		font-size: 2em;
+	}
+}
+
+.contenido > a, .sobremi_contenido a {
+	display: inline-block;
+	padding: 1em 2em;
+	background: transparent;
+	border: 2px solid rgb(233,33,33);
+	color: rgb(233,33,33);
+	font-size: 11px;
+	letter-spacing: 1px;
+}
+
+.sobremi_contenido a {
+    position: relative;
+    z-index: 1;
+    @include transition(color .25s);
+
+    &:hover {
+        color: rgb(235,235,235);
+    }
+
+    &:after {
+        content: '';
+        height: 100%;
+        width: 0;
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        background: rgb(233,33,33);
+        z-index: -1;
+        @include transition(all .25s);
+    }
+
+    &:hover:after {
+        width: 100%;
+    }
+}
+
+nav, .sobremi_container, .promo_container, .footer_container, .portafolio_container {
+    width: 100%;
+    position: relative;
+    padding: 0;
+
+    @media screen and (min-width: 960px) {
+        width: 100%;
+        max-width: 960px;
+        margin: auto;
+        padding: 0 50px;
+    }
+}
+
+p {
+    color: rgb(134,134,134);
+    font-size: 1.1em;
+    line-height: 1.3;
+}
+
+ul {
+	list-style-type: none;
+}
+
+a, button {
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    z-index: 1;
+}
+
+.clearfix:after {
+	display: table;
+	content: '';
+	clear: both;
+}
+
+///////////////////////////////
+///////ESTILOS DEL MENU////////
+///////////////////////////////
+
+#burger {
+    position: fixed;
+    right: 0;
+    height: 40px !important;
+    width: 40px;
+    cursor: pointer;
+    z-index: 999;
+    outline: none;
+    display: inline-block;
+    border-bottom-left-radius: 10px;
+
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+
+	&::selection {
+		background: transparent;
+	}
+
+	i, i:before, i:after {
+        @include transition(all 500ms);
+        @include border-radius(5px);
+        background: red;
+        top: 0;
+	}
+
+	i {
+		display: inline-block;
+		width: 35px;
+		height: 2px;
+		position: relative;
+
+		&:before {
+			position: absolute;
+			content: '';
+			top: 8px;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			margin: 0 auto;
+		}
+
+		&:after {
+			position: absolute;
+			content: '';
+			top: 16px;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			margin: 0 auto;
+		}
+
+		&.open {
+			@include transform(rotate(45deg));
+            top: 8px;
+
+			&:before {
+				top: 0;
+				@include transform(rotate(90deg));
+			}
+
+			&:after {
+				opacity: 0;
+			}
+		}
+	}
+}
+
+#menu {
+    height: 0;
+    @include transition(height 500ms);
+    width: 100%;
+    z-index: 500;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    font-size: 2em;
+    background: #222;
+
+    @media screen and (min-width: 768px) {
+        height: auto;
+        position: absolute;
+        font-size: 1em;
+        background: transparent;
+
+        &.fixed-menu {
+            position: fixed;
+            background: #222;
+
+            h1 {
+                font-size: 1.5em;
+                color: rgb(230,230,230);
+                border: 3px solid;
+
+                a {
+                    color: rgb(230,230,230);
+                }
+            }
+        }
+    }
+
+    &.open {
+        height: 100%;
+    }
+
+    nav {
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+
+        h1 {
+            display: none;
+            padding: .25em 1em;
+        }
+    }
+
+    ul {
+        width: 100%;
+        height: 100%;
+
+        @media screen and (min-width: 768px) {
+            width: auto;
+            padding: .5em 1em;
+        }
+
+        li {
+            width: 100%;
+            height: calc(100% / 4);
+
+            @media screen and (min-width: 768px) {
+                width: auto;
+                height: auto;
+            }
+        }
+
+        a {
+            padding: 1em .5em;
+            height: 100%;
+            font-size: .9em;
+            color: rgb(230,230,230);
+            outline: none;
+            position: relative;
+			font-weight: 400;
+
+            @media screen and (min-width: 768px) {
+                &:hover {
+                    color: lighten(rgb(230,230,230), 20%);
+                }
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    height: 2px;
+                    width: 0%;
+                    background: lighten(rgb(230,230,230), 20%);
+                    @include transition(all 500ms);
+                }
+
+                &:hover:after {
+                   width: 100%;
+                }
+            }
+        }
+    }
+}
+
+///////////////////////////////
+//////ESTILOS DE SECCION///////
+///////////////////////////////
+
+#home {
+    min-height: 100%;
+    width: 100%;
+    position: relative;
+    background: #222;
+    background-size: cover;
+    text-align: center;
+
+    @media screen and (min-width: 960px) {
+        min-height: 75%;
+    }
+
+    .contenido {
+        color: rgb(233,233,233);
+        width: 100%;
+        max-width: 960px;
+
+        h1 {
+            font-size: 2.5em;
+
+            @media screen and (min-width: 520px) {
+                font-size: 3em;
+            }
+
+            @media screen and (min-width: 1280px) {
+                font-size: 4em;
+            }
+        }
+
+        & > a {
+            margin-top: 1.5em;
+            background: rgb(233,33,33);
+            color: rgb(235,235,235);
+        }
+
+        ul li {
+            margin: 10px 5px;
+            display: inline-block;
+
+        a {
+            color: rgb(235,235,235);
+            }
+        }
+    }
+
+    .homeimage {
+        height: 220px;
+        width: 100%;
+        background: url('../img/responsive-website-design.png') no-repeat center;
+        background-size: auto;
+        display: none;
+
+        @media screen and (min-width: 768px) {
+            display: inline-block;
+        }
+    }
+}
+
+#sobremi {
+	position: relative;
+
+	.sobremi_container {
+        .sobremi_contenido {
+            i {
+                font-weight: 700;
+            }
+
+            a {
+               margin-top: 1.5em;
+            }
+        }
+
+        .skills {
+            margin-top: 50px;
+
+            .skills-list {
+                p {
+                    font-size: .9em;
+                    width: 100%;
+                    padding: 0 10px;
+
+                    @media screen and (min-width: 480px) {
+                            width: 50%;
+                    }
+
+                    @media screen and (min-width: 768px) {
+                        width: 25%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#promo {
+    background: url("../img/headlights1.jpg") no-repeat center fixed;
+    background-size: cover;
+    text-align: center;
+    position: relative;
+
+    &::after {
+        position: absolute;
+        background: rgba(35,35,35,.9);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: '';
+        z-index: 1;
+    }
+
+    .promo_container {
+        z-index: 2;
+    
+        h1 {
+            color: rgb(235,235,235);
+            font-weight: 400;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        ul {
+            margin-top: 15px;
+
+            li {
+                display: inline-block;
+                margin: 0 5px;
+
+                a {
+                    color: rgb(235,235,235);
+                }
+            }
+        }
+    }
+}
+
+#portafolio {
+    background: rgb(235,235,235);
+    text-align: center;
+
+    .proyecto {
+        font-size: 14px;
+        position: relative;
+        margin: 25px auto;
+        width: 100%;
+        text-align: justify;
+        padding: 25px;
+        z-index: 1;
+        background: rgb(240,240,240);
+
+        ul {
+            color: rgb(134,134,134);
+            list-style-type: initial;
+            margin: 15px 15px 15px 35px;
+        }
+
+        h2 {
+            color: rgb(84,84,84);
+	        font-weight: 300;
+            margin-bottom: 10px;
+            text-align: left;
+            text-decoration: underline;
+
+            a {
+                color: rgb(84,84,84);
+                font-weight: 400;
+            }
+        }
+
+        a {
+            color: rgb(233,33,33);
+
+            &:hover {
+                color: darken(rgb(233,33,33), 10%);
+            }
+        }
+    }
+}
+
+/* FOOTER */
+.footer_principal {
+    background: #222;
+    padding: 1em;
+
+    #menusfooter {
+        border-bottom: 1px solid rgb(103,106,110);
+    }
+
+    ul {
+
+        a {
+            color: rgb(150,150,150);
+            font-size: .8em;
+            display: block;
+            text-decoration: none;
+
+            &:hover {
+                color: rgb(240,240,240);
+            }
+        }
+
+        &:first-child {
+            float: left;
+
+            a {
+                padding: .25em;
+
+                @media screen and (min-width: 520px) {
+                    padding: 1em;
+                }
+            }
+        }
+
+        &:last-child {
+            float: right;
+
+            a {
+                padding: .5em;
+            }
+        }
+
+        li {
+            @media screen and (min-width: 520px) {
+                display: inline-block;
+            }
+        }
+    }
+
+    #lastmenufooter {
+        & * {
+            color: rgb(103,106,110);
+        }
+
+        ul {
+            float: right;
+        }
+    }
+}
