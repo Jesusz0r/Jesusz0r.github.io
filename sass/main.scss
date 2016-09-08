@@ -460,11 +460,6 @@ a, button {
         z-index: 1;
         background: rgb(240,240,240);
 
-        @media screen and (min-width: 960px) {
-            width: 45%;
-            margin: 2.5%;
-        }
-
         ul {
             color: rgb(134,134,134);
             list-style-type: initial;
