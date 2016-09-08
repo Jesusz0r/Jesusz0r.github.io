@@ -79,4 +79,17 @@
         }
     }
 
+
+
+    #portafolio {
+        .portafolio_container > ul {
+            @include display-flex;
+            @include flex-flow(column);
+
+            @media screen and (min-width: 960px) {
+                @include flex-flow(row wrap);
+                @include align-items(stretch);
+            }
+        }
+    }
 }

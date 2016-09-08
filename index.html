@@ -36,7 +36,7 @@
 
     <section id='home'>
         <div class="contenido">
-            <h1>Mi nombre es Jesús Mendoza y <span>desarrollo páginas web</span>.</h1>
+            <h1>Soy Jesús Mendoza. <br><span id="phrase"></span></h1>
             <a href='#sobremi'>CONOCEME</a>
             <ul id="social">
                 <li><a href="http://github.com/Jesusz0r" target="_blank"><i class="fa fa-github fa-lg"></i></a></li>
@@ -54,7 +54,7 @@
         <div class="sobremi_container clearfix">
                 <div class="sobremi_contenido">
                     <h1>Sobre mi</h1>
-                    <p class="two-column">Me dedico al <i>diseño y desarrollo de páginas web</i>. Actualmente vivo en Santa Cruz de Tenerife - España.</p>
+                    <p class="two-column">Actualmente vivo en Santa Cruz de Tenerife - España. Expando mis conocimientos constantemente y actualmente tengo conocimiento en las siguientes tecnologías:</p>
 
                     <!-- <a href="#contacto">CONTACTAME</a> -->
                 </div>
@@ -75,7 +75,7 @@
     <section id="promo">
         <div class="promo_container">
             <h1>Servicios</h1>
-            <p>Ofrezco servicios de desarrollo web usando tecnologías tales como HLTM, CSS, JavaScript, Bootstrap, manejo de contenidos con WordPress y aplicaciones RESTful con Node.js y Express. Si necesitas una página web personal, empresarial o incluso una tienda online no dudes en contactarme a través de mis redes sociales.</p>
+            <p>Ofrezco servicios de desarrollo web usando tecnologías tales como HTML, CSS, JavaScript, Bootstrap, manejo de contenidos con WordPress y aplicaciones web RESTful con Node.js, Express y MongoDB. Si necesitas una página web personal, empresarial o quieres trabajar conmigo no dudes en contactarme a través de mis redes sociales.</p>
             <ul id="social">
                 <li><a href="http://github.com/Jesusz0r" target="_blank"><i class="fa fa-github fa-lg"></i></a></li>
                 <li><a href="https://es.linkedin.com/in/jesus-mendoza-2220a886" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a></li>
@@ -120,7 +120,7 @@
 
               <li class="proyecto">
                 <div>
-                    <h2><a href="https://yelpcampapplication.herokuapp.com/" target="_blank">YelCamp Demo app</a></h2>
+                    <h2><a href="https://yelpcampapplication.herokuapp.com/" target="_blank">YelpCamp</a></h2>
                     <p>Esta es una applicación en la que se aplica CRUD, se pueden crear, borrar, editar y mostrar "Camps", se puede subir una imagen relacionada con este y se pueden agregar comentarios, también cuenta con un sistema de autenticación y registro.</p>
                     <ul>
                         <li>Node.js.</li>
@@ -201,6 +201,26 @@
 
         ga('create', 'UA-58977019-2', 'auto');
         ga('send', 'pageview');
+    </script>
+    <script>
+        var phraseContainer = $('#phrase');
+        var phrase = 'Me dedico al desarrollo de páginas web';
+        var newWord = '';
+        var index = 0;
+
+        $(document).ready(function() {
+            setTimeout(function() {
+                var intervalID = setInterval(function() {
+                    newWord += phrase[index];
+                    phraseContainer.html(newWord);
+                    index++;
+
+                    if (newWord.length === phrase.length) {
+                        window.clearInterval(intervalID);
+                    }
+                }, 200);
+            }, 1000);
+        });
     </script>
 </body>
 </html>
