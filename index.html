@@ -31,7 +31,7 @@
             <ul>
                 <li><a href="#home">Inicio</a></li>
                 <li><a href="#sobremi">Sobre mi</a></li>
-                <li><a href="#portafolio">Portafolio</a></li>
+                <!-- <li><a href="#portafolio">Portafolio</a></li> -->
                 <!-- <li><a href="#contacto">Contacto</a></li> -->
             </ul>
         </nav>
@@ -39,7 +39,7 @@
 
     <section id='home'>
         <div class="contenido">
-            <h1>Soy Jesús Mendoza. <br><span id="phrase"></span></h1>
+            <h1>Jesús Mendoza. <br><span id="phrase"></span></h1>
             <a href='#sobremi'>CONOCEME</a>
             <ul id="social">
                 <li><a href="http://github.com/Jesusz0r" target="_blank"><i class="fa fa-github fa-lg"></i></a></li>
@@ -88,6 +88,7 @@
         </div>
     </section>
 
+    <!--
     <section id="portafolio" class="clearfix">
         <div class="portafolio_container">
             <h1>Portafolio</h1>
@@ -153,7 +154,7 @@
         </div>
     </section>
 
-    <!-- <section id="contacto">
+    <section id="contacto">
         <div class="contacto_container">
             <h1>Contacto</h1>
 
@@ -189,7 +190,7 @@
 
             <div id="lastmenufooter" class="clearfix">
                 <ul>
-                    <li>&copy; Copyright Jesús Mendoza 2015-2016.</li>
+                    <li>&copy; Copyright Jesús Mendoza 2015-2017.</li>
                 </ul>
             </div>
         </div>
@@ -206,12 +207,12 @@
         ga('send', 'pageview');
     </script>
     <script>
-        var phraseContainer = $('#phrase');
-        var phrase = 'Me dedico al desarrollo de páginas y aplicaciones web';
-        var newWord = '';
-        var index = 0;
+        $(document).ready(function() {          
+            const phraseContainer = $('#phrase');
+            const phrase = 'Me dedico al desarrollo de páginas y aplicaciones web';
+            let newWord = '';
+            let index = 0;
 
-        $(document).ready(function() {
             setTimeout(function() {
                 var intervalID = setInterval(function() {
                     newWord += phrase[index];
@@ -221,8 +222,8 @@
                     if (newWord.length === phrase.length) {
                         window.clearInterval(intervalID);
                     }
-                }, 100);
-            }, 1000);
+                }, 90);
+            }, 500);
         });
     </script>
 </body>
