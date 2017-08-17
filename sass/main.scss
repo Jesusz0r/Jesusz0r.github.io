@@ -67,6 +67,19 @@ nav, .sobremi_container, .promo_container, .footer_container, .portafolio_contai
   }
 }
 
+#home .contenido > a, #promo .promo_container > a {
+  margin-top: 15px;
+  display: inline-block;
+  padding: 1em 2em;
+  background: transparent;
+  border: 2px solid rgb(233, 33, 33);
+  color: rgb(230, 230, 230);
+  font-size: 11px;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  transition: background .5s;
+}
+
 p {
   color: rgb(134, 134, 134);
   font-size: 1em;
@@ -96,14 +109,18 @@ a, button {
 
 #burger {
   position: fixed;
-  right: 0;
+  top: 10px;
+  right: 10px;
   height: 40px !important;
   width: 40px;
   cursor: pointer;
   z-index: 999;
   outline: none;
   display: inline-block;
-  border-bottom-left-radius: 10px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  background-color: rgb(33, 33, 33);
 
   @media screen and (min-width: 768px) {
     display: none;
@@ -117,7 +134,6 @@ a, button {
     @include transition(all 500ms);
     @include border-radius(5px);
     background: rgb(230, 230, 230);
-    top: 5px;
   }
 
   i {
@@ -125,12 +141,12 @@ a, button {
     width: 25px;
     height: 2px;
     position: relative;
+    left: 7.5px;
 
     &:before {
       position: absolute;
       content: '';
       top: 7px;
-      left: 0;
       height: 100%;
       width: 100%;
       margin: 0 auto;
@@ -140,7 +156,6 @@ a, button {
       position: absolute;
       content: '';
       top: 14px;
-      left: 0;
       height: 100%;
       width: 100%;
       margin: 0 auto;
@@ -224,7 +239,11 @@ a, button {
 
     li {
       width: 100%;
-      height: calc(100% / 4);
+      height: calc(100% / 3);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
       @media screen and (min-width: 768px) {
         width: auto;
@@ -305,19 +324,6 @@ a, button {
           content: "_";
         }
       }
-    }
-
-    & > a {
-      margin-top: 15px;
-      display: inline-block;
-      padding: 1em 2em;
-      background: transparent;
-      border: 2px solid rgb(233, 33, 33);
-      color: rgb(230, 230, 230);
-      font-size: 11px;
-      letter-spacing: 1px;
-      border-radius: 5px;
-      transition: background .5s;
     }
 
     & > a::hover {
@@ -493,15 +499,23 @@ a, button {
 
   #menusfooter {
     border-bottom: 1px solid rgb(103, 103, 103);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
   }
 
   ul {
-
     a {
       color: rgb(134, 134, 134);
       font-size: .8em;
       display: block;
       text-decoration: none;
+      padding: .25em;
+
+      @media screen and (min-width: 520px) {
+        padding: 1em;
+      }
 
       &:hover {
         color: rgb(230, 230, 230);
@@ -509,23 +523,13 @@ a, button {
     }
 
     &:first-child {
-      float: left;
-
-      a {
-        padding: .25em;
-
-        @media screen and (min-width: 520px) {
-          padding: 1em;
-        }
-      }
+      margin: 0 auto 0 0;
     }
 
     &:last-child {
-      float: right;
-
-      a {
-        padding: .5em;
-      }
+      display: flex;
+      flex-direction: row;
+      margin: 0 0 0 auto;
     }
 
     li {
