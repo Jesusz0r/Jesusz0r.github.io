@@ -54,7 +54,7 @@ html, body {
   }
 }
 
-nav, .sobremi_container, #particles-js_container, .footer_container, .portafolio_container {
+nav, .sobremi_container, .promo_container, .footer_container, .portafolio_container {
   width: 100%;
   position: relative;
   padding: 0;
@@ -67,7 +67,7 @@ nav, .sobremi_container, #particles-js_container, .footer_container, .portafolio
   }
 }
 
-#home .contenido > a, #particles-js #particles-js_container > a {
+#home .contenido > a, #particles-js .promo_container > a {
   margin-top: 15px;
   display: inline-block;
   padding: 1em 2em;
@@ -423,7 +423,7 @@ a, button {
     z-index: 1;
   }
 
-  #particles-js_container {
+  .promo_container {
     z-index: 2;
 
     h2 {
