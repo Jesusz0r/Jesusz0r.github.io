@@ -32,8 +32,6 @@
                 <li><a href="#home">Inicio</a></li>
                 <li><a href="#sobremi">Sobre mi</a></li>
                 <li><a href="#promo">Servicios</a></li>
-                <!-- <li><a href="#portafolio">Portafolio</a></li>
-                <!-- <li><a href="#contacto">Contacto</a></li> -->
             </ul>
         </nav>
     </header>
@@ -54,34 +52,31 @@
     </section>
 
     <section id="sobremi">
-
         <div class="sobremi_container clearfix">
-                <div class="sobremi_contenido">
-                    <h2>Sobre mi</h2>
-                    <p class="two-column">Actualmente vivo en Madrid - España. Expando mis conocimientos constantemente y actualmente tengo conocimiento en las siguientes tecnologías:</p>
+            <div class="sobremi_contenido">
+                <h2>Sobre mi</h2>
+                <p class="two-column">Actualmente vivo en Madrid - España. Expando mis conocimientos constantemente y actualmente tengo conocimiento en las siguientes tecnologías:</p>
+            </div>
 
-                    <!-- <a href="#contacto">CONTACTAME</a> -->
+            <div class="skills clearfix">
+                <div class="skills-list">
+                    <p><i class="icon-html"></i> HTML</p>
+                    <p><i class="icon-css"></i> CSS</p>
+                    <p><i class="icon-sass"></i> Sass</p>
+                    <p><i class="icon-javascript"></i> JavaScript/jQuery</p>
+                    <p><i class="icon-wordpress"></i> WordPress</p>
+                    <p><i class="icon-nodejs"></i> Node.js/Express</p>
+                    <p><i class="icon-mongodb"></i> MongoDB</p>
+                    <p><i class="icon-reactjs"></i> React/Redux</p>
+                    <p><i class="icon-angular-alt"></i> Angular 4</p>
+                    <p><i class="icon-git"></i> Git</p>
                 </div>
-
-                <div class="skills clearfix">
-                    <div class="skills-list">
-                        <p><i class="icon-html"></i> HTML</p>
-                        <p><i class="icon-css"></i> CSS</p>
-                        <p><i class="icon-sass"></i> Sass</p>
-                        <p><i class="icon-javascript"></i> JavaScript/jQuery</p>
-                        <p><i class="icon-wordpress"></i> WordPress</p>
-                        <p><i class="icon-nodejs"></i> Node.js/Express</p>
-                        <p><i class="icon-mongodb"></i> MongoDB</p>
-                        <p><i class="icon-reactjs"></i> React/Redux</p>
-                        <p><i class="icon-angular-alt"></i> Angular 4</p>
-                        <p><i class="icon-git"></i> Git</p>
-                    </div>
-                </div>
+            </div>
         </div>
     </section>
 
     <section id="promo">
-        <div class="promo_container">
+        <div id="particles-js" class="promo_container">
             <h2>Servicios</h2>
             <p>Ofrezco servicios de desarrollo web usando tecnologías tales como HTML, CSS, JavaScript, Bootstrap, manejo de contenidos con WordPress, aplicaciones web con React, Redux, Angular y API's con Node.js, Express y MongoDB. Si necesitas una página web personal, empresarial, una aplicación web o simplemente quieres trabajar conmigo no dudes en contactarme a través de mis redes sociales o pulsando el botón de contacto.</p>
             <ul class="social">
@@ -93,90 +88,6 @@
         </div>
     </section>
 
-    <!--
-    <section id="portafolio" class="clearfix">
-        <div class="portafolio_container">
-            <h1>Portafolio</h1>
-
-            <ul>
-              <li class="proyecto">
-                <div>
-                    <h2><a href="Landio/index.html" target="_blank">Land.io</a></h2>
-                    <p>Transformación de un mock up de una página web en Photoshop a código.</p>
-                    <ul>
-                        <li>HTML.</li>
-                        <li>Sass (Compass).</li>
-                    </ul>
-                    <a href="Landio/index.html" target="_blank">Link al proyecto.</a>
-                </div>
-              </li>
-
-              <li class="separador"></li>
-
-              <li class="proyecto">
-                <div>
-                    <h2><a href="kreativa/index.html" target="_blank">Kreativa</a></h2>
-                    <p>Mock up en HTML y CSS para una imprenta, he creado el diseño y implementado la programación.</p>
-                    <ul>
-                        <li>HTML.</li>
-                        <li>Sass (Compass).</li>
-                    </ul>
-                    <a href="kreativa/index.html" target="_blank">Link al proyecto.</a>
-                </div>
-              </li>
-
-              <li class="separador"></li>
-
-              <li class="proyecto">
-                <div>
-                    <h2><a href="https://yelpcampapplication.herokuapp.com/" target="_blank">YelpCamp</a></h2>
-                    <p>Esta es una applicación en la que se aplica CRUD, se pueden crear, borrar, editar y mostrar "Camps", se puede subir una imagen relacionada con este y se pueden agregar comentarios, también cuenta con un sistema de autenticación y registro.</p>
-                    <ul>
-                        <li>Node.js.</li>
-                        <li>Express</li>
-                        <li>MongoDB (Mongoose).</li>
-                        <li>Ejs Templating.</li>
-                        <li>Bootstrap.</li>
-                        <li>Heroku.</li>
-                    </ul>
-                    <a href="https://yelpcampapplication.herokuapp.com/" target="_blank">Link al proyecto.</a>
-                </div>
-              </li>
-
-              <li class="separador"></li>
-
-              <li class="proyecto">
-                <div>
-                    <h2><a href="http://propiedades507.net" target="_blank">Propiedades507</a></h2>
-                    <p>Página web para una empresa de bienes y raíces creada a partir de una plantilla de WordPress.</p>
-                    <ul>
-                        <li>WordPress.</li>
-                    </ul>
-                    <a href="http://propiedades507.net" target="_blank">Link al proyecto.</a>
-                </div>
-              </li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="contacto">
-        <div class="contacto_container">
-            <h1>Contacto</h1>
-
-            <div class="formcontainer">
-                <form id="ajax-contact" class="clearfix" method="post" action="mailer.php" autocomplete="off">
-                    <div id="form-messages"></div>
-                    <input type="text" id="name" placeholder="Nombre" name="name" required>
-                    <input type="email" id="email" placeholder="Correo Electronico" name="email" required>
-                    <input type="text" id="subject" placeholder="Asunto" name="subject" required>
-                    <textarea id="message" name="message" placeholder="Mensaje" required></textarea>
-                    <button type="submit" id="submit_btn">ENVIAR</button>
-                </form>
-            </div>
-        </div>
-    </section>
-    -->
-
     <footer class="footer_principal">
         <div class="footer_container">
             <div id="menusfooter" class="clearfix">
@@ -184,8 +95,6 @@
                     <li><a href="#home">Inicio</a></li>
                     <li><a href="#sobremi">Sobre mi</a></li>
                     <li><a href="#promo">Servicios</a></li>
-                    <!-- <li><a href="#portafolio">Portafolio</a></li>
-                    <li><a href="#contacto">Contacto</a></li> -->
                 </ul>
                 <ul id="socialfooter">
                     <li><a href="http://github.com/Jesusz0r" target="_blank"><i class="fa fa-github fa-lg"></i></a></li>
@@ -202,6 +111,7 @@
         </div>
     </footer>
 
+    <script src="js/particles.min.js"></script>
     <script src="js/custom.js"></script>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -211,26 +121,6 @@
 
         ga('create', 'UA-58977019-2', 'auto');
         ga('send', 'pageview');
-    </script>
-    <script>
-        $(document).ready(function() {          
-            const phraseContainer = $('#phrase');
-            const phrase = 'Me dedico al desarrollo de páginas y aplicaciones web';
-            let newWord = '';
-            let index = 0;
-
-            setTimeout(function() {
-                var intervalID = setInterval(function() {
-                    newWord += phrase[index];
-                    phraseContainer.html(newWord);
-                    index++;
-
-                    if (newWord.length === phrase.length) {
-                        window.clearInterval(intervalID);
-                    }
-                }, 90);
-            }, 500);
-        });
     </script>
 </body>
 </html>
