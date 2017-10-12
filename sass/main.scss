@@ -21,7 +21,7 @@ html, body {
 ///////ESTILOS GENERALES///////
 ///////////////////////////////
 
-#menu, #sobremi, #particles-js, #portafolio, #contacto {
+#menu, #sobremi, #promo, #portafolio, #contacto {
   h2 {
     font-size: 1.5em;
     text-align: center;
@@ -34,7 +34,7 @@ html, body {
   }
 }
 
-#sobremi, #particles-js, #portafolio, #contacto {
+#sobremi, #promo, #portafolio, #contacto {
   padding: 75px 25px;
 
   h1 {
@@ -67,7 +67,7 @@ nav, .sobremi_container, .promo_container, .footer_container, .portafolio_contai
   }
 }
 
-#home .contenido > a, #particles-js .promo_container > a {
+#home .contenido > a, #promo .promo_container > a {
   margin-top: 15px;
   display: inline-block;
   padding: 1em 2em;
@@ -406,7 +406,7 @@ a, button {
   }
 }
 
-#particles-js {
+#promo {
   background: url("../img/headlights1.jpg") no-repeat center fixed;
   background-size: cover;
   text-align: center;
@@ -447,6 +447,14 @@ a, button {
         }
       }
     }
+  }
+
+  #particles-js {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
   }
 }
 
