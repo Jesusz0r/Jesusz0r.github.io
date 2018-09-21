@@ -1,4 +1,5 @@
-@import 'compass', 'flexbox', 'noflexbox', 'https://fonts.googleapis.com/css?family=Raleway:300,400,500,700';
+@import "compass",
+  "https://fonts.googleapis.com/css?family=Raleway:300,400,500,700";
 
 * {
   margin: 0;
@@ -6,9 +7,10 @@
   @include box-sizing(border-box);
 }
 
-html, body {
+html,
+body {
   font-size: 16px;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   background: rgb(245, 245, 245);
   height: 100%;
   min-height: 100%;
@@ -20,7 +22,10 @@ html, body {
 ///////ESTILOS GENERALES///////
 ///////////////////////////////
 
-#menu, #sobremi, #promo, #portafolio, #contacto {
+#menu,
+#sobremi,
+#experiencia,
+#servicios {
   h2 {
     font-size: 1.5em;
     text-align: center;
@@ -33,7 +38,8 @@ html, body {
   }
 }
 
-#sobremi, #promo, #portafolio, #contacto {
+#sobremi,
+#servicios {
   padding: 75px 25px;
 
   h1 {
@@ -53,7 +59,11 @@ html, body {
   }
 }
 
-nav, .sobremi_container, .promo_container, .footer_container, .portafolio_container {
+nav,
+.sobremi-container,
+.experiencia-container,
+.servicios-container,
+.footer-container {
   width: 100%;
   position: relative;
   padding: 0;
@@ -66,7 +76,8 @@ nav, .sobremi_container, .promo_container, .footer_container, .portafolio_contai
   }
 }
 
-#home .contenido > a, #promo .promo_container > a {
+#home .contenido > a,
+#servicios .servicios-container > a {
   margin-top: 15px;
   display: inline-block;
   padding: 1em 2em;
@@ -76,29 +87,32 @@ nav, .sobremi_container, .promo_container, .footer_container, .portafolio_contai
   font-size: 11px;
   letter-spacing: 1px;
   border-radius: 5px;
-  transition: background .5s;
+  transition: background 0.5s;
 }
 
 p {
   color: rgb(134, 134, 134);
-  font-size: 1em;
+  font-size: 15px;
   line-height: 1.3;
+  line-height: 22px;
+  letter-spacing: -0.03px;
 }
 
 ul {
   list-style-type: none;
 }
 
-a, button {
+a,
+button {
   text-decoration: none;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 700;
   z-index: 1;
 }
 
 .clearfix:after {
   display: table;
-  content: '';
+  content: "";
   clear: both;
 }
 
@@ -129,7 +143,9 @@ a, button {
     background: transparent;
   }
 
-  i, i:before, i:after {
+  i,
+  i:before,
+  i:after {
     @include transition(all 500ms);
     @include border-radius(5px);
     background: rgb(230, 230, 230);
@@ -141,10 +157,11 @@ a, button {
     height: 2px;
     position: relative;
     left: 7.5px;
+    top: -1px;
 
     &:before {
       position: absolute;
-      content: '';
+      content: "";
       top: 7px;
       height: 100%;
       width: 100%;
@@ -153,7 +170,7 @@ a, button {
 
     &:after {
       position: absolute;
-      content: '';
+      content: "";
       top: 14px;
       height: 100%;
       width: 100%;
@@ -187,7 +204,7 @@ a, button {
   top: 0;
   left: 0;
   font-size: 2em;
-  background: rgb(33, 33, 33);;
+  background: rgb(33, 33, 33);
 
   @media screen and (min-width: 768px) {
     height: auto;
@@ -197,15 +214,20 @@ a, button {
 
     &.fixed-menu {
       position: fixed;
-      background: rgb(33, 33, 33);;
+      background: rgb(33, 33, 33);
 
-      h2 {
-        font-size: 1.5em;
-        color: rgb(230, 230, 230);
-        border: 3px solid;
+      nav {
+        @include justify-content(center);
 
-        a {
+        #linkhome {
+          margin-right: auto;
+        }
+
+        h2 {
+          display: block;
+          font-size: 1.5em;
           color: rgb(230, 230, 230);
+          border: 3px solid white;
         }
       }
     }
@@ -219,11 +241,16 @@ a, button {
     height: 100%;
     width: 100%;
     text-align: center;
-    padding: 15px 15px 0 15px;
+    padding: 15px;
+    @include display-flex;
+    @include flex-flow(row);
+    @include justify-content(flex-end);
+    @include align-items(center);
 
     h2 {
       display: none;
-      padding: .25em 1em;
+      padding: 0.25em 1em;
+      margin-bottom: 0;
     }
   }
 
@@ -231,10 +258,13 @@ a, button {
     width: 100%;
     height: 100%;
     align-self: center;
+    @include display-flex;
+    @include flex-direction(column);
 
     @media screen and (min-width: 768px) {
+      @include flex-direction(row);
       width: auto;
-      padding: .5em 1em;
+      padding: 0.5em 1em;
     }
 
     li {
@@ -252,9 +282,9 @@ a, button {
     }
 
     a {
-      padding: 1em .5em;
+      padding: 1em 0.5em;
       height: 100%;
-      font-size: .9em;
+      font-size: 0.9em;
       color: rgb(230, 230, 230);
       outline: none;
       position: relative;
@@ -266,14 +296,14 @@ a, button {
         }
 
         &:after {
-          content: '';
+          content: "";
           position: absolute;
           bottom: 0;
           left: 0;
           height: 2px;
           width: 0%;
           background: lighten(rgb(230, 230, 230), 20%);
-          transition: all .5s;
+          transition: all 0.5s;
         }
 
         &:hover:after {
@@ -292,9 +322,17 @@ a, button {
   min-height: 100%;
   width: 100%;
   position: relative;
-  background: rgb(33, 33, 33);;
+  background: rgb(33, 33, 33);
   background-size: cover;
   text-align: center;
+  @include display-flex;
+  @include flex-flow(column);
+  @include justify-content(space-between);
+  padding-top: 10%;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 5%;
+  }
 
   @media screen and (min-width: 960px) {
     min-height: 75%;
@@ -304,6 +342,13 @@ a, button {
     color: rgb(230, 230, 230);
     width: 100%;
     max-width: 960px;
+    @include align-self(center);
+    padding-top: 50px;
+    margin-bottom: 50px;
+
+    @media screen and (min-width: 768px) {
+      margin-top: auto;
+    }
 
     h1 {
       font-size: 2.5em;
@@ -332,7 +377,7 @@ a, button {
 
     ul {
       margin-top: 15px;
-    
+
       li {
         margin: 10px 5px;
         display: inline-block;
@@ -342,12 +387,16 @@ a, button {
         }
       }
     }
+
+    .homeimage {
+      margin-top: auto;
+    }
   }
 
   .homeimage {
     height: 220px;
     width: 100%;
-    background: url('../img/responsive-website-design.png') no-repeat center;
+    background: url("../img/responsive-website-design.png") no-repeat center;
     background-size: auto;
     display: none;
 
@@ -359,17 +408,20 @@ a, button {
 
 @keyframes blink {
   25% {
-    opacity: 0
+    opacity: 0;
   }
   75% {
-    opacity: 1
+    opacity: 1;
   }
 }
 
 #sobremi {
   position: relative;
 
-  .sobremi_container {
+  .sobremi-container {
+    @include display-flex;
+    @include flex-flow(column);
+
     .sobremi_contenido {
       i {
         font-weight: 700;
@@ -384,18 +436,15 @@ a, button {
       margin-top: 50px;
 
       .skills-list {
+        @include display-flex;
+        @include flex-wrap(wrap);
+        @include flex-basis(0);
+        @include justify-content(center);
+
         p {
-          font-size: .9em;
-          width: 100%;
-          padding: 0 10px;
-
-          @media screen and (min-width: 480px) {
-            width: 50%;
-          }
-
-          @media screen and (min-width: 768px) {
-            width: 25%;
-          }
+          font-size: 0.9em;
+          flex-basis: 0;
+          padding: 10px;
 
           i {
             font-size: 4em;
@@ -406,7 +455,51 @@ a, button {
   }
 }
 
-#promo {
+#experiencia {
+  padding: 0 25px 75px 25px;
+
+  .experiencia-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .line {
+      height: 50px;
+      width: 2px;
+      background-color: rgb(33, 33, 33);
+
+      @media screen and (min-width: 960px) {
+        height: 75px;
+      }
+    }
+
+    .experiencia-item {
+      background-color: lighten(#ccc, 15%);
+      display: block;
+      text-align: center;
+      padding: 15px 25px;
+      border-radius: 7.5px;
+
+      @media screen and (min-width: 960px) {
+        padding: 25px 35px;
+        max-width: 50%;
+      }
+
+      h4 {
+        font-weight: 400;
+        margin-top: 5px;
+        margin-bottom: 20px;
+      }
+
+      p {
+        text-align: left;
+      }
+    }
+  }
+}
+
+#servicios {
   background: url("../img/headlights1.jpg") no-repeat center fixed;
   background-size: cover;
   text-align: center;
@@ -414,16 +507,16 @@ a, button {
 
   &::after {
     position: absolute;
-    background: rgba(35, 35, 35, .9);
+    background: rgba(35, 35, 35, 0.9);
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    content: '';
+    content: "";
     z-index: 1;
   }
 
-  .promo_container {
+  .servicios-container {
     z-index: 2;
 
     h2 {
@@ -458,51 +551,9 @@ a, button {
   }
 }
 
-#portafolio {
-  background: rgb(230, 230, 230);
-  text-align: center;
-
-  .proyecto {
-    font-size: 14px;
-    width: 100%;
-    margin: 25px 0;
-    text-align: justify;
-    padding: 25px;
-    z-index: 1;
-    background: rgb(245, 245, 245);
-
-    ul {
-      color: rgb(134, 134, 134);
-      list-style-type: initial;
-      margin: 15px 15px 15px 35px;
-    }
-
-    h2 {
-      color: rgb(103, 103, 103);
-      font-weight: 300;
-      margin-bottom: 10px;
-      text-align: left;
-      text-decoration: underline;
-
-      a {
-        color: rgb(103, 103, 103);
-        font-weight: 400;
-      }
-    }
-
-    a {
-      color: rgb(233, 33, 33);
-
-      &:hover {
-        color: darken(rgb(233, 33, 33), 10%);
-      }
-    }
-  }
-}
-
 /* FOOTER */
 .footer_principal {
-  background: rgb(33, 33, 33);;
+  background: rgb(33, 33, 33);
   padding: 1em;
 
   #menusfooter {
@@ -511,51 +562,51 @@ a, button {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-  }
 
-  ul {
-    a {
-      color: rgb(134, 134, 134);
-      font-size: .8em;
-      display: block;
-      text-decoration: none;
-      padding: .25em;
-
-      @media screen and (min-width: 520px) {
-        padding: 1em;
-      }
-
-      &:hover {
-        color: rgb(230, 230, 230);
-      }
-    }
-
-    &:first-child {
-      margin: 0 auto 0 0;
-    }
-
-    &:last-child {
+    ul {
       display: flex;
-      flex-direction: row;
-      margin: 0 0 0 auto;
-    }
-
-    li {
-      @media screen and (min-width: 520px) {
-        display: inline-block;
+      align-items: center;
+      justify-content: center;
+  
+      a {
+        color: rgb(134, 134, 134);
+        font-size: 12px;
+        display: block;
+        text-decoration: none;
+        padding: 0.25em;
+  
+        @media screen and (min-width: 520px) {
+          padding: 1em;
+        }
+  
+        &:hover {
+          color: rgb(230, 230, 230);
+        }
+      }
+  
+      &:first-child {
+        margin: 0 auto 0 0;
+      }
+  
+      &:last-child {
+        margin: 0 0 0 auto;
+      }
+  
+      li {
+        @media screen and (min-width: 520px) {
+          display: inline-block;
+        }
       }
     }
   }
 
   #lastmenufooter {
-    margin-top: .5em;
+    margin-top: 0.5em;
+    display: flex;
+    justify-content: flex-end;
 
     & * {
       color: rgb(103, 103, 103);
-    }
-
-    ul {
-      float: right;
     }
   }
 }
