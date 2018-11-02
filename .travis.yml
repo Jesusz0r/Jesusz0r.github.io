@@ -6,6 +6,7 @@ chache:
   yarn: true
   directories:
     - node_modules
+script: echo "npm test temporarily disabled"
 before_deploy:
   - yarn global add travis-ci-cloudfront-invalidation
 deploy:
