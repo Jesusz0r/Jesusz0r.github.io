@@ -25,10 +25,10 @@ function writingEffect() {
 
 function fixedMenu() {
   $(window).scroll(function() {
-    var homeHeight = $("#home").outerHeight();
+    var menuHeight = $("#menu").outerHeight();
     var scrollTop = $(this).scrollTop();
 
-    if (scrollTop > homeHeight) $("#menu").addClass("fixed-menu");
+    if (scrollTop > menuHeight) $("#menu").addClass("fixed-menu");
     else $("#menu").removeClass("fixed-menu");
   });
 }
@@ -47,16 +47,13 @@ function burgerMenu() {
 
 function removeHashFromUrlAndAnimate() {
   $(function() {
-    $("a[href*=#]:not([href=#])").click(function() {
+    $("a").on('click', function() {
       if (
-        location.pathname.replace(/^\//, "") ==
-          this.pathname.replace(/^\//, "") &&
+        location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") &&
         location.hostname == this.hostname
       ) {
         var target = $(this.hash);
-        target = target.length
-          ? target
-          : $("[name=" + this.hash.slice(1) + "]");
+        target = target.length ? target : $("[name=" + this.hash.slice(1) + "]");
         if (target.length) {
           $("html,body").animate(
             {
